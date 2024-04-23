@@ -1,0 +1,24 @@
+server: 
+  port:
+  timeout: 
+
+log:
+  environment:
+  level: 
+  format: 
+
+pubsub:
+  project-id:
+  topic:
+  credential-path:
+
+youtube:
+  api-key:
+
+
+firestore:
+  project-id:
+  database:
+  queue-history-collection:
+  credential-file-path:
+  
