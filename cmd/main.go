@@ -32,7 +32,7 @@ func main() {
 
 	defer pubSubClient.Close()
 
-	youtubeService, err := youtube.NewService(context.Background(), option.WithAPIKey("AIzaSyAB5WD38r8E9qcR6M793kZ9yiqEZCowFOU"))
+	youtubeService, err := youtube.NewService(context.Background(), option.WithAPIKey(configs.Youtube.APIKey))
 	if err != nil {
 		panic(err)
 	}

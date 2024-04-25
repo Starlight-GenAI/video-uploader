@@ -18,6 +18,7 @@ type Config struct {
 	Server    ServerConfig `mapstructure:"server" validate:"required"`
 	PubSub    PubSub       `mapstructure:"pubsub" validate:"required"`
 	Firestore Firestore    `mapstructure:"firestore" validate:"required"`
+	Youtube   Youtube      `mapstructure:"youtube" validate:"required`
 }
 
 type ServerConfig struct {
@@ -39,7 +40,7 @@ type Firestore struct {
 }
 
 type Youtube struct {
-	APIKey string `json:"api-key" validate:"required"`
+	APIKey string `mapstructure:"api-key" validate:"required"`
 }
 
 func InitConfig() *Config {
