@@ -2,7 +2,6 @@ package serializer
 
 import (
 	v "github.com/go-ozzo/ozzo-validation/v4"
-	"github.com/go-ozzo/ozzo-validation/v4/is"
 )
 
 type VideoDetail struct {
@@ -17,7 +16,7 @@ type VideoDetail struct {
 }
 
 type VideoInfoRequest struct {
-	VideoUrl string `json:"video_url"`
+	VideoID string `json:"video_id"`
 }
 
 type VideoInfoResponse struct {
@@ -26,7 +25,7 @@ type VideoInfoResponse struct {
 
 func (b VideoInfoRequest) Validate() error {
 	if err := v.ValidateStruct(&b,
-		v.Field(&b.VideoUrl, is.URL, v.Required),
+		v.Field(&b.VideoID, v.Required),
 	); err != nil {
 		return err
 	}

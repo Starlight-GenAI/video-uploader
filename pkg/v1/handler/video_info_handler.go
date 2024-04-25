@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/dreammnck/video-uploader/pkg/v1/model"
 	"github.com/dreammnck/video-uploader/pkg/v1/serializer"
 	"github.com/labstack/echo/v4"
 )
@@ -18,7 +19,9 @@ func (h *videoUploaderHandler) VideoInfo(c echo.Context) error {
 		return c.JSON(http.StatusBadRequest, fmt.Sprintf("validate request fail with %s", err.Error()))
 	}
 
-	video_detail, err := h.videoUploaderSvc.GetVideoDetail(c.Request().Context(), body.VideoUrl)
+	videoUrl := fmt.Sprintf(model.YoutubeLinkeScheme, body.VideoID)
+
+	video_detail, err := h.videoUploaderSvc.GetVideoDetail(c.Request().Context(), videoUrl)
 	if err != nil {
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	}

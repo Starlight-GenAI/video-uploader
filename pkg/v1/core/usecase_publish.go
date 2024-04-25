@@ -13,7 +13,6 @@ import (
 )
 
 const pending = "pending"
-const youtubeLinkeScheme = "https://youtube.com/watch?v=%s"
 
 func (s *videoUploaderSvc) Publish(ctx context.Context, opts model.PublishOpts) (*string, error) {
 
@@ -23,7 +22,7 @@ func (s *videoUploaderSvc) Publish(ctx context.Context, opts model.PublishOpts) 
 	videoID := ""
 
 	if opts.VideoUrl == "" {
-		videoUrl = fmt.Sprintf(youtubeLinkeScheme, opts.VideoID)
+		videoUrl = fmt.Sprintf(model.YoutubeLinkeScheme, opts.VideoID)
 		videoID = opts.VideoID
 	} else {
 		videoUrl = opts.VideoUrl

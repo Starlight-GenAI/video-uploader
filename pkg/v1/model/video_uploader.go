@@ -44,3 +44,5 @@ type VideoDetail struct {
 type ChannelDetail struct {
 	ChannelName string
 }
+
+const YoutubeLinkeScheme = "https://youtube.com/watch?v=%s"

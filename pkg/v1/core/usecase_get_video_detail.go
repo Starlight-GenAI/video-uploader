@@ -14,7 +14,6 @@ import (
 func (s *videoUploaderSvc) GetVideoDetail(ctx context.Context, video_url string) (*model.VideoDetail, error) {
 	logger.Logger.Info("get video detail", slog.String("tag", "usecase get video detail"))
 
-	fmt.Println(video_url)
 	video_id, err := s.getVideoID(video_url)
 	if err != nil {
 		logger.Logger.Error(fmt.Sprintf("extract video id fail with %s", err.Error()), slog.String("tag", "usecase get video detail"))
