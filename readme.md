@@ -22,6 +22,11 @@ docker run -p 8080:8080  -v ./config.yaml:/config video-uploader -d
 ```
 5. The application will be running on 127.0.0.1:8080
 
+## Deployed base URL
+```text
+http://34.29.126.183:8080
+```
+
 ## API document
 ### 1. POST /upload <br />
 description: endpoint for uploading video
@@ -49,3 +54,4 @@ user_id: random string
 ```text
 queue_id: id for a generated trip
 ```
+
